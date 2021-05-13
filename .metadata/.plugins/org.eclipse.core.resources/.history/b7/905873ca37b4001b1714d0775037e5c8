@@ -1,0 +1,30 @@
+#include "bibliotecaUTN-validaciones.h"
+#include "eContribuyente.h"
+
+// PRINTF ARRAY SPACE
+int w[MAX_COL] = {15, 15, 15, 15, 15};
+
+// ID
+int idContribuyente = 1000;
+void eEmployee_SetId(int* id)
+{
+	*id = idContribuyente++;
+}
+
+// INIT ESTRUCTURA
+int initContribuyente(eContribuyente* eArr, int largoArr)
+{
+	int exitoFuncion = -1;
+	eContribuyente contribuyenteNuevo;
+	if(eArr != NULL && largoArr > 0)
+	{
+		int i;
+		for(i = 0; i < largoArr; i++)
+		{
+			eArr[i] = contribuyenteNuevo;
+			eArr[i].isEmpty = 1;
+		}
+		exitoFuncion = 0;
+	}
+	return exitoFuncion;
+}

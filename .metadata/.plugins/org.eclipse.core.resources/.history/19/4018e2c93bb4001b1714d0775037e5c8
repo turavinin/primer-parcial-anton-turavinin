@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
+
+#ifndef ERECAUDACION_H_
+#define ERECAUDACION_H_
+
+// DEFINE
+#define MAX_CHAR 100
+#define MAX_ERRORES 3
+#define MAX_COL 5
+
+// STRUCT
+typedef struct
+{
+	int id;
+	int idContribuyente;
+	char mes[MAX_CHAR];
+	int tipo;
+	int estado;
+	float importe;
+	int isEmpty;
+} eRecaudacion;
+
+#endif /* ERECAUDACION_H_ */

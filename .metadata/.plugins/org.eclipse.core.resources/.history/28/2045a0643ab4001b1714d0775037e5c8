@@ -1,0 +1,56 @@
+#include "bibliotecaUTN-validaciones.h"
+#include "eRecaudacion.h"
+
+// PRINTF ARRAY SPACE
+int w[MAX_COL] = {15, 15, 15, 15, 15};
+
+// ID
+int idRecaudacion = 100;
+void setIdRecaudacion(int* id)
+{
+	*id = idRecaudacion++;
+}
+
+// INIT ESTRUCTURA
+int initRecaudacion(eRecaudacion* eArr, int largoArr)
+{
+	int exitoFuncion = -1;
+	eRecaudacion recaudacionNueva;
+	if(eArr != NULL && largoArr > 0)
+	{
+		int i;
+		for(i = 0; i < largoArr; i++)
+		{
+			eArr[i] = recaudacionNueva;
+			eArr[i].isEmpty = 1;
+		}
+		exitoFuncion = 0;
+	}
+	return exitoFuncion;
+}
+
+// ADD
+int searchEmptyRecaudacion(eRecaudacion* eArr, int largoArr, int* posLibre)
+{
+	int exitoFuncion = -1;
+
+	if(eArr != NULL && largoArr > 0)
+	{
+		int i;
+		for(i = 0; i < largoArr; i++)
+		{
+			if(eArr[i].isEmpty == 1)
+			{
+				*posLibre = i;
+				exitoFuncion = 0;
+				break;
+			}
+		}
+
+		if(exitoFuncion == -1)
+		{
+			*posLibre = -1;
+		}
+	}
+	return exitoFuncion;
+}

@@ -1,0 +1,5 @@
+#include "bibliotecaUTN-validaciones.h"
+#include "eContribuyente.h"
+
+// PRINTF ARRAY SPACE
+int w[MAX_COL] = {15, 15, 15, 15, 15};

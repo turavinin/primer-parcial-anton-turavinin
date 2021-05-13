@@ -1,0 +1,144 @@
+#include "bibliotecaUTN-validaciones.h"
+#include "eContribuyente.h"
+
+// PRINTF ARRAY SPACE
+int w[MAX_COL] = {15, 15, 15, 15, 15};
+
+// ID
+int idContribuyente = 1000;
+void setIdContribuyente(int* id)
+{
+	*id = idContribuyente++;
+}
+
+// INIT ESTRUCTURA
+int initContribuyente(eContribuyente* eArr, int largoArr)
+{
+	int exitoFuncion = -1;
+	eContribuyente contribuyenteNuevo;
+	if(eArr != NULL && largoArr > 0)
+	{
+		int i;
+		for(i = 0; i < largoArr; i++)
+		{
+			eArr[i] = contribuyenteNuevo;
+			eArr[i].isEmpty = 1;
+		}
+		exitoFuncion = 0;
+	}
+	return exitoFuncion;
+}
+
+// ADD CONTRIBUYENTE
+int searchEmpty(eContribuyente* eArr, int largoArr, int* posLibre)
+{
+	int exitoFuncion = -1;
+
+	if(eArr != NULL && largoArr > 0)
+	{
+		int i;
+		for(i = 0; i < largoArr; i++)
+		{
+			if(eArr[i].isEmpty == 1)
+			{
+				*posLibre = i;
+				exitoFuncion = 0;
+				break;
+			}
+		}
+
+		if(exitoFuncion == -1)
+		{
+			*posLibre = -1;
+		}
+	}
+	return exitoFuncion;
+}
+
+int addContribuyente(eContribuyente* eArr, int largoArr, int id, char* nombre, char* apellido, int cuil, int posLibre)
+{
+	int exitoFuncion = -1;
+	if(eArr != NULL && largoArr > 0)
+	{
+		eArr[posLibre].id = id;
+		strcpy(eArr[posLibre].nombre, nombre);
+		strcpy(eArr[posLibre].apellido, apellido);
+		eArr[posLibre].cuil = cuil;
+		eArr[posLibre].isEmpty = 0;
+		exitoFuncion = 0;
+	}
+
+	return exitoFuncion;
+}
+
+int altaContribuyente(eContribuyente* eArr, int largoArr, int* existenciaProxLibre)
+{
+	int exitoFuncion = -1;
+	int posLibre;
+	int auxProxLibre = *existenciaProxLibre;
+	int exito = searchEmpty(eArr, largoArr, &posLibre);
+
+	if(exito == 0)
+	{
+		// Variable datos
+		char nombre[MAX_CHAR];
+		char apellido[MAX_CHAR];
+		float salario;
+		int sector;
+
+
+
+
+
+		if(utn_getStringLimited(nombre, "\nIngrese el nombre del contribuyente: ", "-- Error de carga. ", MAX_CHAR, MAX_ERRORES) == 0 &&
+		utn_getStringLimited(apellido, "Ingrese el apellido del contribuyente: ", "-- Error de carga. ", MAX_CHAR, MAX_ERRORES) == 0 &&
+		utn_getFloat(&salario, "Ingrese el cuil del contribuyente: ", "-- Error de carga. ", MAX_ERRORES) == 0)
+		{
+			int id;
+			eEmployee_SetId(&id);
+			exito = addEmployees(eArr, largoArr, id, nombre, apellido, salario, sector, posLibre);
+			exitoFuncion = 0;
+		}
+		else
+		{
+			exito = -1;
+		}
+
+		eEmployee_SearchEmpty(eArr, largoArr, &auxProxLibre);
+		if(auxProxLibre == -1)
+		{
+			*existenciaProxLibre = auxProxLibre;
+		}
+	}
+
+	if(exito != 0)
+	{
+		printf("---- ERROR AL INGRESAR EMPLEADO ----");
+	}
+
+	return exitoFuncion;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

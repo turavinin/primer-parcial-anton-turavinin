@@ -1,0 +1,10 @@
+#include "bibliotecaUTN-validaciones.h"
+#include "eRecaudacion.h"
+
+// PRINTF ARRAY SPACE
+int w[MAX_COL] = {15, 15, 15, 15, 15};
+
+// ID
+int idRecaudacion = 100;
+void setIdContribuyente(int* id)
+{

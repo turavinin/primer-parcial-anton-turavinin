@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
+
+#ifndef ECONTRIBUYENTE_H_
+#define ECONTRIBUYENTE_H_
+
+// DEFINE
+#define MAX_CHAR 100
+#define MAX_ERRORES 3
+#define MAX_COL 5
+
+#endif /* ECONTRIBUYENTE_H_ */
