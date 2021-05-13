@@ -54,26 +54,11 @@ int main(void) {
 			switch(opcionMenu)
 			{
 				case 1:
-					altaContribuyente(arrContri, LARGO_ARR, &exiteProxContri);
-					banderaAltaContri = 1;
-					if(existeProximoLibre != -1)
-					{
-						utn_getCharDosOpciones(&salida, "¿Desea seguir? (S / N): ", "Error.", 's', 'n', 3);
-					}
-					else
-					{
-						salida = 'n';
-					}
+					exitoFuncion = altaContribuyente(arrContri, LARGO_ARR, &exiteProxContri);
+
+
 					break;
 				case 2:
-					if(banderaAltaContri == 1)
-					{
-						modificarContribuyente(arrContri, LARGO_ARR);
-					}
-					else
-					{
-						printf("\n--- PRIMERO DEBE INGRESAR CONTRIBUYENTE ---\n");
-					}
 					break;
 				case 3:
 					break;

@@ -35,8 +35,7 @@ int addContribuyente(eContribuyente* eArr, int largoArr, int id, char* nombre, c
 int altaContribuyente(eContribuyente* eArr, int largoArr, int* existenciaProxLibre);
 int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri);
 
-// MODIFICAR
-int modificarContribuyente(eContribuyente* eArr, int largoArr);
+
 
 
 

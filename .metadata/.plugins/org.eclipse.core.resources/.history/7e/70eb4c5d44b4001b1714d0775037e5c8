@@ -72,7 +72,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("\n--- PRIMERO DEBE INGRESAR CONTRIBUYENTE ---\n");
+						printf("--- PRIMERO DEBE INGRESAR CONTRIBUYENTE ---");
 					}
 					break;
 				case 3:

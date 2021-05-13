@@ -163,6 +163,8 @@ int modificarContribuyente(eContribuyente* eArr, int largoArr)
 }
 
 
+
+
 // GET ID
 int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri)
 {

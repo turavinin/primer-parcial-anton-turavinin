@@ -154,13 +154,15 @@ int modificarContribuyente(eContribuyente* eArr, int largoArr)
 
 		if(exito != 0)
 		{
-			printf("\n---- NO SE PUDO MODIFICAR. INTENTE DE NUEVO ----\n");
+			printf("---- ERROR AL MODIFICAR EL CONTRIBUYENTE ----");
 		}
 
 	}
 
 	return exitoFuncion;
 }
+
+
 
 
 // GET ID
