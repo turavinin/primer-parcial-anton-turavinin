@@ -14,13 +14,15 @@ int main(void) {
 	// Variables
 	int exitoFuncion;
 	int opcionMenu;
-	int existeProximoLibre;
 	char salida;
+
+	int idContribuyente;
 
 	// Banderas
 	int exiteProxContri;
 	int exiteProxRecauda;
 	int banderaAltaContri = 0;
+	int banderaAltaRecauda = 0;
 
 	// Declara array
 	eContribuyente arrContri[LARGO_ARR];
@@ -56,7 +58,7 @@ int main(void) {
 				case 1:
 					altaContribuyente(arrContri, LARGO_ARR, &exiteProxContri);
 					banderaAltaContri = 1;
-					if(existeProximoLibre != -1)
+					if(exiteProxContri != -1)
 					{
 						utn_getCharDosOpciones(&salida, "¿Desea seguir? (S / N): ", "Error.", 's', 'n', 3);
 					}
@@ -76,8 +78,31 @@ int main(void) {
 					}
 					break;
 				case 3:
+					if(banderaAltaContri == 1)
+					{
+						bajaContribuyente(arrContri, arrRecauda, LARGO_ARR);
+					}
+					else
+					{
+						printf("\n--- PRIMERO DEBE INGRESAR CONTRIBUYENTE ---\n");
+					}
+					break;
 					break;
 				case 4:
+					exitoFuncion = getIdContribuyente(arrContri, LARGO_ARR, &idContribuyente);
+					if(exitoFuncion == 0)
+					{
+						altaRecaudacion(arrRecauda, LARGO_ARR, &exiteProxRecauda, idContribuyente);
+						banderaAltaRecauda = 1;
+						if(exiteProxRecauda != -1)
+						{
+							utn_getCharDosOpciones(&salida, "\n¿Desea seguir? (S / N): ", "Error.", 's', 'n', 3);
+						}
+						else
+						{
+							salida = 'n';
+						}
+					}
 					break;
 				case 5:
 					break;

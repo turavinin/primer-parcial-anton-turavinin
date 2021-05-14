@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
+#include "eRecaudacion.h"
 
 #ifndef ECONTRIBUYENTE_H_
 #define ECONTRIBUYENTE_H_
@@ -33,12 +34,16 @@ int initContribuyente(eContribuyente* eArr, int largoArr);
 int searchEmptyContribuyente(eContribuyente* eArr, int largoArr, int* posLibre);
 int addContribuyente(eContribuyente* eArr, int largoArr, int id, char* nombre, char* apellido, int cuil, int posLibre);
 int altaContribuyente(eContribuyente* eArr, int largoArr, int* existenciaProxLibre);
-int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri);
 
 // MODIFICAR
 int modificarContribuyente(eContribuyente* eArr, int largoArr);
 
+// BAJA
+int eliminarContribuyente(eContribuyente* eContriArr, int largoArr, int idContri);
+int bajaContribuyente(eContribuyente* eArr, eRecaudacion* eArrRecauda, int largoArr);
 
+// GETS
+int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri);
 
 
 

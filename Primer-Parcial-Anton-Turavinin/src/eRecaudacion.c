@@ -100,7 +100,7 @@ int getMes(int* tipoMes)
 	return exitoFuncion;
 }
 
-int altaRecaudacion(eRecaudacion* eRecaudaArr, eContribuyente* eContriArr, int largoArr, int* existenciaProxLibre)
+int altaRecaudacion(eRecaudacion* eRecaudaArr, int largoArr, int* existenciaProxLibre, int idContri)
 {
 	int exitoFuncion = -1;
 	int posLibre;
@@ -110,20 +110,18 @@ int altaRecaudacion(eRecaudacion* eRecaudaArr, eContribuyente* eContriArr, int l
 	if(exito == 0)
 	{
 		// Variable datos
-		int idContribuyente;
 		int mes;
 		int tipo;
 		float importe;
 
-		if(getIdContribuyente(eContriArr, largoArr, &idContribuyente) == 0 &&
-		   getMes(&mes) == 0 &&
+		if(getMes(&mes) == 0 &&
 		   utn_getNumberLimited(&tipo, "\n 1. ARBA\n 2. IIBB\n 3. GANANCIAS\nSeleccione una opción (Ingrese su numero): ",
 	       "\n--- ¡LA OPCION INGRESADA ES INCORRECTA! --- \n", 1, 3, 3) == 0 &&
            utn_getFloat(&importe, "Ingrese importe: ", "-- Error de carga. ", MAX_ERRORES) == 0)
 		  {
 			int id;
 			setIdRecaudacion(&id);
-			exito = addRecaudacion(eRecaudaArr, largoArr, id, idContribuyente, mes, tipo, posLibre);
+			exito = addRecaudacion(eRecaudaArr, largoArr, id, idContri, mes, tipo, posLibre);
 			exitoFuncion = 0;
 		}
 		else
@@ -140,7 +138,7 @@ int altaRecaudacion(eRecaudacion* eRecaudaArr, eContribuyente* eContriArr, int l
 
 	if(exito != 0)
 	{
-		printf("---- ERROR LA RECAUDACION ----");
+		printf("---- ERROR EN AGREGAR LA RECAUDACION ----");
 	}
 
 	return exitoFuncion;
@@ -148,7 +146,12 @@ int altaRecaudacion(eRecaudacion* eRecaudaArr, eContribuyente* eContriArr, int l
 
 
 
-
+int eliminarRecauda(eRecaudacion recauda)
+{
+	int exitoFuncion = 0;
+	recauda.isEmpty = 1;
+	return exitoFuncion;
+}
 
 
 

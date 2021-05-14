@@ -1,1 +1,12 @@
-Info: Nothing to build for Primer-Parcial-Anton-Turavinin
+21:34:00 **** Incremental Build of configuration Debug for project Primer-Parcial-Anton-Turavinin ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\eContribuyente.o" "..\\src\\eContribuyente.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Primer-Parcial-Anton-Turavinin.o" "..\\src\\Primer-Parcial-Anton-Turavinin.c" 
+..\src\Primer-Parcial-Anton-Turavinin.c: In function 'main':
+..\src\Primer-Parcial-Anton-Turavinin.c:25:6: warning: variable 'banderaAltaRecauda' set but not used [-Wunused-but-set-variable]
+  int banderaAltaRecauda = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -o Primer-Parcial-Anton-Turavinin.exe "src\\Primer-Parcial-Anton-Turavinin.o" "src\\bibliotecaUTN-validaciones.o" "src\\eContribuyente.o" "src\\eRecaudacion.o" 
+
+21:34:01 Build Finished. 0 errors, 1 warnings. (took 873ms)
+
