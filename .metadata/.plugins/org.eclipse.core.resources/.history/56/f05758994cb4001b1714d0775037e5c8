@@ -262,6 +262,7 @@ int bajaContribuyente(eContribuyente* eArr, eRecaudacion* eArrRecauda, int largo
 	return exitoFuncion;
 }
 
+
 int eliminarContribuyente(eContribuyente* eContriArr, int largoArr, int idContri)
 {
 	int exitoFuncion = -1;
@@ -276,12 +277,13 @@ int eliminarContribuyente(eContribuyente* eContriArr, int largoArr, int idContri
 			{
 				eContriArr[i] = vacio;
 				eContriArr[i].isEmpty = 1;
-				exitoFuncion = 0;
 			}
 		}
 	}
 	return exitoFuncion;
 }
+
+
 
 // GET ID
 int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri)
@@ -319,6 +321,8 @@ int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri)
 
 	return exitoFuncion;
 }
+
+
 
 
 

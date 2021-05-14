@@ -92,6 +92,7 @@ int main(void) {
 					if(exitoFuncion == 0)
 					{
 						altaRecaudacion(arrRecauda, LARGO_ARR, &exiteProxRecauda, idContribuyente);
+						banderaAltaRecauda = 1;
 						if(exiteProxRecauda != -1)
 						{
 							utn_getCharDosOpciones(&salida, "\n¿Desea seguir? (S / N): ", "Error.", 's', 'n', 3);

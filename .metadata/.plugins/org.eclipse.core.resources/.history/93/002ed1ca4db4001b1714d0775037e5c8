@@ -321,6 +321,26 @@ int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri)
 }
 
 
+// REFINANCIAR RECAUDA
+int refinanciarRecauda(eContribuyente* eArr, eRecaudacion* eArrRecauda, int largoArr)
+{
+	int exitoFuncion = -1;
+	int auxIdRecauda;
+	if(eArr != NULL && eArrRecauda != NULL && largoArr > 0)
+	{
+		getIdContribuyente(eArrRecauda, largoArr, &auxIdRecauda);
+		int i;
+		for(i = 0; i < largoArr; i++)
+		{
+			if(eArrRecauda[i].id == auxIdRecauda)
+		}
+
+
+	}
+
+	return exitoFuncion;
+}
+
 
 
 

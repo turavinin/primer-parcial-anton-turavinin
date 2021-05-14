@@ -146,8 +146,6 @@ int altaRecaudacion(eRecaudacion* eRecaudaArr, int largoArr, int* existenciaProx
 
 
 
-// BAJA
-
 int eliminarRecauda(eRecaudacion recauda)
 {
 	int exitoFuncion = 0;
@@ -156,42 +154,7 @@ int eliminarRecauda(eRecaudacion recauda)
 }
 
 
-// GET ID
-int getIdRecauda(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda)
-{
-	int exitoFuncion = -1;
-	int auxId = -1;
 
-	if(eRecaudaArr != NULL && largoArr > 0)
-	{
-		int exito = utn_getNumber(&auxId, "Ingrese ID de la recaudacion: ", "-- Error de carga. ", MAX_ERRORES);
-
-		if(exito == 0)
-		{
-			int i;
-			for(i = 0; i < largoArr; i++)
-			{
-				if(eRecaudaArr[i].id == auxId)
-				{
-					*idRecauda = auxId;
-					exitoFuncion = 0;
-					break;
-				}
-			}
-
-			if(auxId == -1)
-			{
-				printf("--- ¡NO SE ENCONTRO RECAUDACION! ---");
-			}
-		}
-		else
-		{
-			printf("--- ¡MUCHOS ERRORES! ---");
-		}
-	}
-
-	return exitoFuncion;
-}
 
 
 

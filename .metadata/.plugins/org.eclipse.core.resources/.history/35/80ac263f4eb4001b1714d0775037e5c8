@@ -157,7 +157,7 @@ int eliminarRecauda(eRecaudacion recauda)
 
 
 // GET ID
-int getIdRecauda(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda)
+int getIdContribuyente(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda)
 {
 	int exitoFuncion = -1;
 	int auxId = -1;

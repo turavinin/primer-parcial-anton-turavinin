@@ -26,7 +26,6 @@ typedef struct
 
 // ID
 void setIdRecaudacion(int* id);
-int getIdRecauda(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda);
 
 // INIT
 int initRecaudacion(eRecaudacion* eArr, int largoArr);

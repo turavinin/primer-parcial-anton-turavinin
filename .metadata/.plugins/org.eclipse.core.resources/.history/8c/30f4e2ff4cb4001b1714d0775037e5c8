@@ -157,7 +157,7 @@ int eliminarRecauda(eRecaudacion recauda)
 
 
 // GET ID
-int getIdRecauda(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda)
+int getIdContribuyente(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda)
 {
 	int exitoFuncion = -1;
 	int auxId = -1;
@@ -181,7 +181,7 @@ int getIdRecauda(eRecaudacion* eRecaudaArr, int largoArr, int* idRecauda)
 
 			if(auxId == -1)
 			{
-				printf("--- ¡NO SE ENCONTRO RECAUDACION! ---");
+				printf("--- ¡NO SE ENCONTRO CONTRIBUYENTE! ---");
 			}
 		}
 		else

@@ -276,7 +276,6 @@ int eliminarContribuyente(eContribuyente* eContriArr, int largoArr, int idContri
 			{
 				eContriArr[i] = vacio;
 				eContriArr[i].isEmpty = 1;
-				exitoFuncion = 0;
 			}
 		}
 	}
@@ -320,6 +319,12 @@ int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri)
 	return exitoFuncion;
 }
 
+
+// REFINANCIAR RECAUDA
+int refinanciarRecauda(eContribuyente* eArr, eRecaudacion* eArrRecauda, int largoArr)
+{
+
+}
 
 
 

@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
+#include "eRecaudacion.h"
+
+#ifndef ECONTRIBUYENTE_H_
+#define ECONTRIBUYENTE_H_
+
+// DEFINE
+#define MAX_CHAR 100
+#define MAX_ERRORES 3
+#define MAX_COL 5
+
+// STRUCT
+typedef struct
+{
+	int id;
+	char nombre[MAX_CHAR];
+	char apellido[MAX_CHAR];
+	int cuil;
+	int isEmpty;
+} eContribuyente;
+
+
+// SET ID
+void setIdContribuyente(int* id);
+
+// INIT
+int initContribuyente(eContribuyente* eArr, int largoArr);
+
+// ADD
+int searchEmptyContribuyente(eContribuyente* eArr, int largoArr, int* posLibre);
+int addContribuyente(eContribuyente* eArr, int largoArr, int id, char* nombre, char* apellido, int cuil, int posLibre);
+int altaContribuyente(eContribuyente* eArr, int largoArr, int* existenciaProxLibre);
+
+// MODIFICAR
+int modificarContribuyente(eContribuyente* eArr, int largoArr);
+
+// BAJA
+int eliminarContribuyente(eContribuyente* eContriArr, int largoArr, int idContri);
+int bajaContribuyente(eContribuyente* eArr, eRecaudacion* eArrRecauda, int largoArr);
+
+// GETS
+int getIdContribuyente(eContribuyente* eContriArr, int largoArr, int* idContri);
+
+
+
+
+
+
+
+
+
+
+
+
+#endif /* ECONTRIBUYENTE_H_ */
